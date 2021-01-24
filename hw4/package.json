@@ -1,0 +1,15 @@
+{
+  "name": "hw3",
+  "version": "1.0.0",
+  "description": "Task is written on expressjs",
+  "main": "server-on-express.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dmitrii Kushnerev",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "5.10.15"
+  }
+}
