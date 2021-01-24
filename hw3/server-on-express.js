@@ -20,12 +20,18 @@ function getIP(request) {
     return request.ip;
 }
 
-app.post('/', (request, response) => {
-    console.log('Wrong path detected.');
-    response.end();
-});
+app.use((request, response, next) => {
+    const userName = getName(request);
 
-app.post('/secret', (request, response) => {
+    if (request.method === 'POST') {
+        console.log(`Welcome to my tavern, ${userName}!`);
+        next();
+    } else {
+        response.end('Wrong request.');
+    }
+})
+
+app.post('/', (request, response) => {
     const userName = getName(request);
     const userIP = getIP(request);
 
